@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<fuzzySystem xmlns="http://www.ieee1855.org" name="BEER3 - MAMDANI">
+    <knowledgeBase>
+        <fuzzyVariable name="Color" scale="" domainleft="0.0" domainright="45.0" type="input">
+            <fuzzyTerm name="Pale" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="3.297" param4="9.928"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Straw" complement="false">
+                <triangularShape param1="3.297" param2="9.928" param3="17.58"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Amber" complement="false">
+                <triangularShape param1="9.928" param2="17.58" param3="27.598"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Brown" complement="false">
+                <triangularShape param1="17.58" param2="27.598" param3="34.731"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Black OR Label 6" complement="false">
+                <trapezoidShape param1="27.598" param2="34.731" param3="45.0" param4="45.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="(Straw) OR (Amber)" complement="false">
+                <trapezoidShape param1="3.297" param2="9.928" param3="17.58" param4="27.598"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="(Amber) OR (Brown)" complement="false">
+                <trapezoidShape param1="9.928" param2="17.58" param3="27.598" param4="34.731"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Bitterness" scale="" domainleft="8.0" domainright="250.0" type="input">
+            <fuzzyTerm name="Low" complement="false">
+                <trapezoidShape param1="8.0" param2="8.0" param3="25.396" param4="48.132"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="more or less (Low medium)" complement="false">
+                <trapezoidShape param1="25.396" param2="48.132" param3="250.0" param4="250.0"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Strength" scale="" domainleft="0.039" domainright="0.136" type="input">
+            <fuzzyTerm name="Session" complement="false">
+                <trapezoidShape param1="0.039" param2="0.039" param3="0.047" param4="0.054"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Standard" complement="false">
+                <triangularShape param1="0.047" param2="0.054" param3="0.079"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="High" complement="false">
+                <triangularShape param1="0.054" param2="0.079" param3="0.094"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Very high" complement="false">
+                <triangularShape param1="0.079" param2="0.094" param3="0.107"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Label 5" complement="false">
+                <triangularShape param1="0.094" param2="0.107" param3="0.125"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Label 6" complement="false">
+                <trapezoidShape param1="0.107" param2="0.125" param3="0.136" param4="0.136"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="(High) OR (Very high)" complement="false">
+                <trapezoidShape param1="0.054" param2="0.079" param3="0.094" param4="0.107"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="(Session) OR (Standard)" complement="false">
+                <trapezoidShape param1="0.039" param2="0.039" param3="0.054" param4="0.079"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="(Label 5) OR (Label 6)" complement="false">
+                <trapezoidShape param1="0.094" param2="0.107" param3="0.136" param4="0.136"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="(High) OR (Very high) OR (Label 5) OR (Label 6)" complement="false">
+                <trapezoidShape param1="0.054" param2="0.079" param3="0.136" param4="0.136"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Beer_Style" scale="" domainleft="1.0" domainright="8.0" type="output" accumulation="MAX" defuzzifier="MOM" defaultValue="1.0">
+            <fuzzyTerm name="Blanche" complement="false">
+                <singletonShape param1="1.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Lager" complement="false">
+                <singletonShape param1="2.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Pilsner" complement="false">
+                <singletonShape param1="3.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="IPA" complement="false">
+                <singletonShape param1="4.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Stout" complement="false">
+                <singletonShape param1="5.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Barleywine" complement="false">
+                <singletonShape param1="6.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Porter" complement="false">
+                <singletonShape param1="7.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Belgian_Strong_Ale" complement="false">
+                <singletonShape param1="8.0"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+    </knowledgeBase>
+    <mamdaniRuleBase name="rulebase-BEER3" activationMethod="MIN" andMethod="MIN" orMethod="MAX">
+        <rule name="rule1" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Pale</term>
+                </clause>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>Low</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Blanche</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule2" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Pale</term>
+                </clause>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>more or less (Low medium)</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Pilsner</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule3" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Straw</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>(High) OR (Very high)</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>IPA</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule4" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Amber</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>High</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>IPA</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule5" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Straw</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>(Session) OR (Standard)</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Lager</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule6" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>(Straw) OR (Amber)</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>(Label 5) OR (Label 6)</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Barleywine</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule7" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Amber</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>Very high</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Barleywine</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule8" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>(Amber) OR (Brown)</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>(Session) OR (Standard)</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Porter</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule9" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Brown</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>(High) OR (Very high) OR (Label 5) OR (Label 6)</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Belgian_Strong_Ale</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule10" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Black OR Label 6</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Stout</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+    </mamdaniRuleBase>
+</fuzzySystem>

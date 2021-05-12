@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<fuzzySystem xmlns="http://www.ieee1855.org" name="beer3">
+    <knowledgeBase>
+        <fuzzyVariable name="Color" scale="" domainleft="0.0" domainright="45.0" type="input">
+            <fuzzyTerm name="MF0" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="4.0" param4="7.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF1" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="4.0" param4="7.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF2" complement="false">
+                <trapezoidShape param1="4.0" param2="7.0" param3="20.0" param4="21.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF3" complement="false">
+                <trapezoidShape param1="6.0" param2="7.0" param3="8.0" param4="20.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF4" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="6.0" param4="8.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF5" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="13.0" param4="14.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF6" complement="false">
+                <trapezoidShape param1="5.0" param2="6.0" param3="14.0" param4="15.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF7" complement="false">
+                <trapezoidShape param1="30.0" param2="31.0" param3="45.0" param4="45.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF8" complement="false">
+                <trapezoidShape param1="29.0" param2="30.0" param3="45.0" param4="45.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF9" complement="false">
+                <trapezoidShape param1="13.0" param2="14.0" param3="45.0" param4="45.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF10" complement="false">
+                <trapezoidShape param1="12.0" param2="20.0" param3="30.0" param4="34.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF11" complement="false">
+                <trapezoidShape param1="14.0" param2="20.0" param3="28.0" param4="30.0"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Bitterness" scale="" domainleft="8.0" domainright="250.0" type="input">
+            <fuzzyTerm name="MF0" complement="false">
+                <trapezoidShape param1="8.0" param2="8.0" param3="19.0" param4="30.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF1" complement="false">
+                <trapezoidShape param1="8.0" param2="8.0" param3="23.0" param4="30.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF2" complement="false">
+                <trapezoidShape param1="8.0" param2="8.0" param3="27.0" param4="31.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF3" complement="false">
+                <trapezoidShape param1="8.0" param2="8.0" param3="39.0" param4="50.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF4" complement="false">
+                <trapezoidShape param1="29.0" param2="30.0" param3="52.0" param4="63.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF5" complement="false">
+                <trapezoidShape param1="52.0" param2="53.0" param3="250.0" param4="250.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF6" complement="false">
+                <trapezoidShape param1="44.0" param2="50.0" param3="93.0" param4="95.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF7" complement="false">
+                <trapezoidShape param1="38.0" param2="50.0" param3="250.0" param4="250.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF8" complement="false">
+                <trapezoidShape param1="8.0" param2="8.0" param3="32.0" param4="39.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF9" complement="false">
+                <trapezoidShape param1="44.0" param2="52.0" param3="250.0" param4="250.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF10" complement="false">
+                <trapezoidShape param1="62.0" param2="79.0" param3="250.0" param4="250.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF11" complement="false">
+                <trapezoidShape param1="8.0" param2="8.0" param3="47.0" param4="50.0"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Strength" scale="" domainleft="0.039" domainright="0.136" type="input">
+            <fuzzyTerm name="MF0" complement="false">
+                <trapezoidShape param1="0.039" param2="0.039" param3="0.091" param4="0.093"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF1" complement="false">
+                <trapezoidShape param1="0.039" param2="0.039" param3="0.095" param4="0.096"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF2" complement="false">
+                <trapezoidShape param1="0.083" param2="0.085" param3="0.085" param4="0.088"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF3" complement="false">
+                <trapezoidShape param1="0.046" param2="0.053" param3="0.136" param4="0.136"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF4" complement="false">
+                <trapezoidShape param1="0.092" param2="0.093" param3="0.136" param4="0.136"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF5" complement="false">
+                <trapezoidShape param1="0.039" param2="0.039" param3="0.052" param4="0.053"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF6" complement="false">
+                <trapezoidShape param1="0.039" param2="0.039" param3="0.055" param4="0.082"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF7" complement="false">
+                <trapezoidShape param1="0.07" param2="0.087" param3="0.136" param4="0.136"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Beer_Style" scale="" domainleft="1.0" domainright="8.0" type="output" accumulation="MAX" defuzzifier="MOM" defaultValue="1.0">
+            <fuzzyTerm name="Blanche" complement="false">
+                <trapezoidShape param1="1.0" param2="1.0" param3="1.0" param4="2.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Lager" complement="false">
+                <triangularShape param1="1.0" param2="2.0" param3="3.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Pilsner" complement="false">
+                <triangularShape param1="2.0" param2="3.0" param3="4.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="IPA" complement="false">
+                <triangularShape param1="3.0" param2="4.0" param3="5.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Stout" complement="false">
+                <triangularShape param1="4.0" param2="5.0" param3="6.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Barleywine" complement="false">
+                <triangularShape param1="5.0" param2="6.0" param3="7.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Porter" complement="false">
+                <triangularShape param1="6.0" param2="7.0" param3="8.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Belgian-Strong-Ale" complement="false">
+                <trapezoidShape param1="7.0" param2="8.0" param3="8.0" param4="8.0"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+    </knowledgeBase>
+    <mamdaniRuleBase name="rulebase-beer3" activationMethod="MIN" andMethod="MIN" orMethod="MAX">
+        <rule name="rule1" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>MF0</term>
+                </clause>
+                <clause>
+                    <variable>Color</variable>
+                    <term>MF0</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Blanche</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule2" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>MF1</term>
+                </clause>
+                <clause>
+                    <variable>Color</variable>
+                    <term>MF1</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Blanche</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule3" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>MF2</term>
+                </clause>
+                <clause>
+                    <variable>Color</variable>
+                    <term>MF2</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Lager</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule4" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>MF3</term>
+                </clause>
+                <clause>
+                    <variable>Color</variable>
+                    <term>MF3</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Lager</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule5" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>MF4</term>
+                </clause>
+                <clause>
+                    <variable>Color</variable>
+                    <term>MF4</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Pilsner</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule6" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>MF5</term>
+                </clause>
+                <clause>
+                    <variable>Color</variable>
+                    <term>MF5</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>MF0</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>IPA</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule7" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>MF6</term>
+                </clause>
+                <clause>
+                    <variable>Color</variable>
+                    <term>MF6</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>MF1</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>IPA</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule8" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>MF7</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>MF2</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>IPA</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule9" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>MF7</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Stout</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule10" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>MF8</term>
+                </clause>
+                <clause>
+                    <variable>Color</variable>
+                    <term>MF8</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>MF3</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Stout</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule11" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>MF9</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>MF4</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Barleywine</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule12" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>MF10</term>
+                </clause>
+                <clause>
+                    <variable>Color</variable>
+                    <term>MF9</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Barleywine</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule13" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>MF10</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>MF5</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Porter</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule14" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>MF11</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>MF6</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Porter</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule15" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>MF11</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>MF7</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Belgian-Strong-Ale</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+    </mamdaniRuleBase>
+</fuzzySystem>
