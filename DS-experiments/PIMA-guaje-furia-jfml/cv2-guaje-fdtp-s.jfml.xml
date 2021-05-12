@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<fuzzySystem xmlns="http://www.ieee1855.org" name="New Knowledge Base - MAMDANI">
+    <knowledgeBase>
+        <fuzzyVariable name="Number of times pregnant" scale="" domainleft="0.0" domainright="17.0" type="input">
+            <fuzzyTerm name="very low" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="0.0" param4="1.416"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="low OR average low" complement="false">
+                <trapezoidShape param1="0.0" param2="1.416" param3="3.0" param4="4.429"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="average high OR high OR very high" complement="false">
+                <trapezoidShape param1="3.0" param2="4.429" param3="17.0" param4="17.0"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Plasma glucose concentration a 2 hours in an oral glucose tolerance test" scale="" domainleft="0.0" domainright="199.0" type="input">
+            <fuzzyTerm name="very low OR low OR average low" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="100.25" param4="121.186"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="average high" complement="false">
+                <triangularShape param1="100.25" param2="121.186" param3="146.024"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="high" complement="false">
+                <triangularShape param1="121.186" param2="146.024" param3="179.22"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="very high" complement="false">
+                <trapezoidShape param1="146.024" param2="179.22" param3="199.0" param4="199.0"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Diastolic blood pressure (mm Hg)" scale="" domainleft="0.0" domainright="122.0" type="input">
+            <fuzzyTerm name="very low" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="0.0" param4="56.39"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="low OR average low" complement="false">
+                <trapezoidShape param1="0.0" param2="56.39" param3="66.351" param4="72.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="average high" complement="false">
+                <triangularShape param1="66.351" param2="72.0" param3="78.423"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="high OR very high" complement="false">
+                <trapezoidShape param1="72.0" param2="78.423" param3="122.0" param4="122.0"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="2-Hour serum insulin (mu U/ml)" scale="" domainleft="0.0" domainright="846.0" type="input">
+            <fuzzyTerm name="very low OR low" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="90.335" param4="179.876"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="average low" complement="false">
+                <triangularShape param1="90.335" param2="179.876" param3="305.861"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="average high OR high" complement="false">
+                <trapezoidShape param1="179.876" param2="305.861" param3="507.417" param4="756.667"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="very high" complement="false">
+                <trapezoidShape param1="507.417" param2="756.667" param3="846.0" param4="846.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="NOT(very low OR low)" complement="false">
+                <trapezoidShape param1="90.335" param2="179.876" param3="846.0" param4="846.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="(very low OR low) OR (average low)" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="179.876" param4="305.861"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Body mass index (weight in kg/(height in m)^2)" scale="" domainleft="0.0" domainright="67.1" type="input">
+            <fuzzyTerm name="very low" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="0.0" param4="23.775"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="low" complement="false">
+                <triangularShape param1="0.0" param2="23.775" param3="30.11"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="average low" complement="false">
+                <triangularShape param1="23.775" param2="30.11" param3="36.078"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="average high" complement="false">
+                <triangularShape param1="30.11" param2="36.078" param3="44.146"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="high" complement="false">
+                <triangularShape param1="36.078" param2="44.146" param3="63.25"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="very high" complement="false">
+                <trapezoidShape param1="44.146" param2="63.25" param3="67.1" param4="67.1"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="(very low) OR (low)" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="23.775" param4="30.11"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="(low) OR (average low)" complement="false">
+                <trapezoidShape param1="0.0" param2="23.775" param3="30.11" param4="36.078"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="(average low) OR (average high) OR (high) OR (very high)" complement="false">
+                <trapezoidShape param1="23.775" param2="30.11" param3="67.1" param4="67.1"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Diabetes pedigree function" scale="" domainleft="0.078" domainright="2.42" type="input">
+            <fuzzyTerm name="very low OR low OR average low OR average high" complement="false">
+                <trapezoidShape param1="0.078" param2="0.078" param3="1.192" param4="1.642"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="high OR very high" complement="false">
+                <trapezoidShape param1="1.192" param2="1.642" param3="2.42" param4="2.42"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Age (years)" scale="" domainleft="21.0" domainright="81.0" type="input">
+            <fuzzyTerm name="very low" complement="false">
+                <trapezoidShape param1="21.0" param2="21.0" param3="23.88" param4="32.493"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="low" complement="false">
+                <triangularShape param1="23.88" param2="32.493" param3="42.041"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="average low" complement="false">
+                <triangularShape param1="32.493" param2="42.041" param3="52.7"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="average high" complement="false">
+                <triangularShape param1="42.041" param2="52.7" param3="64.069"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="high" complement="false">
+                <triangularShape param1="52.7" param2="64.069" param3="81.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="very high" complement="false">
+                <trapezoidShape param1="64.069" param2="81.0" param3="81.0" param4="81.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="(very low) OR (low)" complement="false">
+                <trapezoidShape param1="21.0" param2="21.0" param3="32.493" param4="42.041"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="(high) OR (very high)" complement="false">
+                <trapezoidShape param1="52.7" param2="64.069" param3="81.0" param4="81.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="(low) OR (average low)" complement="false">
+                <trapezoidShape param1="23.88" param2="32.493" param3="42.041" param4="52.7"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Diabetes" scale="" domainleft="1.0" domainright="2.0" type="output" accumulation="MAX" defuzzifier="MOM" defaultValue="1.0">
+            <fuzzyTerm name="1.0" complement="false">
+                <singletonShape param1="1.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="2.0" complement="false">
+                <singletonShape param1="2.0"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+    </knowledgeBase>
+    <mamdaniRuleBase name="rulebase-New Knowledge Base" activationMethod="MIN" andMethod="MIN" orMethod="MAX">
+        <rule name="rule1" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>very low OR low OR average low</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>1.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule2" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>average high</term>
+                </clause>
+                <clause>
+                    <variable>Age (years)</variable>
+                    <term>(very low) OR (low)</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>1.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule3" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>average high</term>
+                </clause>
+                <clause>
+                    <variable>2-Hour serum insulin (mu U/ml)</variable>
+                    <term>very low OR low</term>
+                </clause>
+                <clause>
+                    <variable>Age (years)</variable>
+                    <term>average high</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>1.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule4" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>average high</term>
+                </clause>
+                <clause>
+                    <variable>Age (years)</variable>
+                    <term>(high) OR (very high)</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>1.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule5" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>high</term>
+                </clause>
+                <clause>
+                    <variable>Body mass index (weight in kg/(height in m)^2)</variable>
+                    <term>(very low) OR (low)</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>1.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule6" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>high</term>
+                </clause>
+                <clause>
+                    <variable>Diastolic blood pressure (mm Hg)</variable>
+                    <term>low OR average low</term>
+                </clause>
+                <clause>
+                    <variable>Body mass index (weight in kg/(height in m)^2)</variable>
+                    <term>average low</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>1.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule7" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>high</term>
+                </clause>
+                <clause>
+                    <variable>Diastolic blood pressure (mm Hg)</variable>
+                    <term>high OR very high</term>
+                </clause>
+                <clause>
+                    <variable>Body mass index (weight in kg/(height in m)^2)</variable>
+                    <term>average low</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>1.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule8" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>high</term>
+                </clause>
+                <clause>
+                    <variable>2-Hour serum insulin (mu U/ml)</variable>
+                    <term>average high OR high</term>
+                </clause>
+                <clause>
+                    <variable>Body mass index (weight in kg/(height in m)^2)</variable>
+                    <term>average high</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>1.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule9" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>very high</term>
+                </clause>
+                <clause>
+                    <variable>Body mass index (weight in kg/(height in m)^2)</variable>
+                    <term>low</term>
+                </clause>
+                <clause>
+                    <variable>Age (years)</variable>
+                    <term>very low</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>1.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule10" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>very high</term>
+                </clause>
+                <clause>
+                    <variable>Diabetes pedigree function</variable>
+                    <term>high OR very high</term>
+                </clause>
+                <clause>
+                    <variable>Age (years)</variable>
+                    <term>(low) OR (average low)</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>1.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule11" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>very high</term>
+                </clause>
+                <clause>
+                    <variable>Body mass index (weight in kg/(height in m)^2)</variable>
+                    <term>(low) OR (average low)</term>
+                </clause>
+                <clause>
+                    <variable>Age (years)</variable>
+                    <term>high</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>1.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule12" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>very high</term>
+                </clause>
+                <clause>
+                    <variable>Body mass index (weight in kg/(height in m)^2)</variable>
+                    <term>high</term>
+                </clause>
+                <clause>
+                    <variable>Age (years)</variable>
+                    <term>high</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>1.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule13" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>average high</term>
+                </clause>
+                <clause>
+                    <variable>Age (years)</variable>
+                    <term>average low</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>2.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule14" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>average high</term>
+                </clause>
+                <clause>
+                    <variable>2-Hour serum insulin (mu U/ml)</variable>
+                    <term>NOT(very low OR low)</term>
+                </clause>
+                <clause>
+                    <variable>Age (years)</variable>
+                    <term>average high</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>2.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule15" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>high</term>
+                </clause>
+                <clause>
+                    <variable>Diastolic blood pressure (mm Hg)</variable>
+                    <term>very low</term>
+                </clause>
+                <clause>
+                    <variable>Body mass index (weight in kg/(height in m)^2)</variable>
+                    <term>average low</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>2.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule16" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>high</term>
+                </clause>
+                <clause>
+                    <variable>2-Hour serum insulin (mu U/ml)</variable>
+                    <term>(very low OR low) OR (average low)</term>
+                </clause>
+                <clause>
+                    <variable>Body mass index (weight in kg/(height in m)^2)</variable>
+                    <term>average high</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>2.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule17" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Number of times pregnant</variable>
+                    <term>very low</term>
+                </clause>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>high</term>
+                </clause>
+                <clause>
+                    <variable>Body mass index (weight in kg/(height in m)^2)</variable>
+                    <term>high</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>2.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule18" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Number of times pregnant</variable>
+                    <term>average high OR high OR very high</term>
+                </clause>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>high</term>
+                </clause>
+                <clause>
+                    <variable>Body mass index (weight in kg/(height in m)^2)</variable>
+                    <term>high</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>2.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule19" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>very high</term>
+                </clause>
+                <clause>
+                    <variable>Body mass index (weight in kg/(height in m)^2)</variable>
+                    <term>(average low) OR (average high) OR (high) OR (very high)</term>
+                </clause>
+                <clause>
+                    <variable>Age (years)</variable>
+                    <term>very low</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>2.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule20" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>very high</term>
+                </clause>
+                <clause>
+                    <variable>Diabetes pedigree function</variable>
+                    <term>very low OR low OR average low OR average high</term>
+                </clause>
+                <clause>
+                    <variable>Age (years)</variable>
+                    <term>(low) OR (average low)</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>2.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule21" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>very high</term>
+                </clause>
+                <clause>
+                    <variable>Age (years)</variable>
+                    <term>average high</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>2.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule22" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma glucose concentration a 2 hours in an oral glucose tolerance test</variable>
+                    <term>very high</term>
+                </clause>
+                <clause>
+                    <variable>Body mass index (weight in kg/(height in m)^2)</variable>
+                    <term>average high</term>
+                </clause>
+                <clause>
+                    <variable>Age (years)</variable>
+                    <term>high</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Diabetes</variable>
+                        <term>2.0</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+    </mamdaniRuleBase>
+</fuzzySystem>

@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<fuzzySystem xmlns="http://www.ieee1855.org" name="BEER3 - MAMDANI">
+    <knowledgeBase>
+        <fuzzyVariable name="Color" scale="" domainleft="0.0" domainright="45.0" type="input">
+            <fuzzyTerm name="Pale" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="3.322" param4="10.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Straw" complement="false">
+                <triangularShape param1="3.322" param2="10.0" param3="17.52"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Amber" complement="false">
+                <triangularShape param1="10.0" param2="17.52" param3="27.646"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Brown" complement="false">
+                <triangularShape param1="17.52" param2="27.646" param3="35.8"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Black" complement="false">
+                <triangularShape param1="27.646" param2="35.8" param3="42.2"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Label 6" complement="false">
+                <trapezoidShape param1="35.8" param2="42.2" param3="45.0" param4="45.0"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Bitterness" scale="" domainleft="8.0" domainright="250.0" type="input">
+            <fuzzyTerm name="Low" complement="false">
+                <trapezoidShape param1="8.0" param2="8.0" param3="25.241" param4="47.493"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Low medium" complement="false">
+                <triangularShape param1="25.241" param2="47.493" param3="91.938"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Medium high" complement="false">
+                <triangularShape param1="47.493" param2="91.938" param3="156.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="High" complement="false">
+                <triangularShape param1="91.938" param2="156.0" param3="201.6"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Label 5" complement="false">
+                <triangularShape param1="156.0" param2="201.6" param3="250.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Label 6" complement="false">
+                <trapezoidShape param1="201.6" param2="250.0" param3="250.0" param4="250.0"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Strength" scale="" domainleft="0.039" domainright="0.136" type="input">
+            <fuzzyTerm name="Session" complement="false">
+                <trapezoidShape param1="0.039" param2="0.039" param3="0.047" param4="0.054"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Standard" complement="false">
+                <triangularShape param1="0.047" param2="0.054" param3="0.079"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="High" complement="false">
+                <triangularShape param1="0.054" param2="0.079" param3="0.093"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Very high" complement="false">
+                <triangularShape param1="0.079" param2="0.093" param3="0.106"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Label 5" complement="false">
+                <triangularShape param1="0.093" param2="0.106" param3="0.125"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Label 6" complement="false">
+                <trapezoidShape param1="0.106" param2="0.125" param3="0.136" param4="0.136"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Beer_Style" scale="" domainleft="1.0" domainright="8.0" type="output" accumulation="MAX" defuzzifier="MOM" defaultValue="1.0">
+            <fuzzyTerm name="Blanche" complement="false">
+                <singletonShape param1="1.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Lager" complement="false">
+                <singletonShape param1="2.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Pilsner" complement="false">
+                <singletonShape param1="3.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="IPA" complement="false">
+                <singletonShape param1="4.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Stout" complement="false">
+                <singletonShape param1="5.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Barleywine" complement="false">
+                <singletonShape param1="6.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Porter" complement="false">
+                <singletonShape param1="7.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="Belgian_Strong_Ale" complement="false">
+                <singletonShape param1="8.0"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+    </knowledgeBase>
+    <mamdaniRuleBase name="rulebase-BEER3" activationMethod="MIN" andMethod="MIN" orMethod="MAX">
+        <rule name="rule1" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Pale</term>
+                </clause>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>Low</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Blanche</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule2" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Pale</term>
+                </clause>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>Low medium</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Pilsner</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule3" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Pale</term>
+                </clause>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>Medium high</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>IPA</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule4" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Pale</term>
+                </clause>
+                <clause>
+                    <variable>Bitterness</variable>
+                    <term>High</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>IPA</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule5" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Straw</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>Session</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Lager</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule6" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Straw</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>Standard</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Lager</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule7" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Straw</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>High</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>IPA</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule8" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Straw</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>Very high</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>IPA</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule9" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Straw</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>Label 5</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Barleywine</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule10" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Straw</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>Label 6</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Barleywine</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule11" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Amber</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>Session</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Porter</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule12" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Amber</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>Standard</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Porter</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule13" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Amber</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>High</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>IPA</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule14" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Amber</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>Very high</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Barleywine</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule15" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Amber</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>Label 5</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Barleywine</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule16" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Amber</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>Label 6</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Barleywine</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule17" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Brown</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>Session</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Porter</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule18" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Brown</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>Standard</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Porter</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule19" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Brown</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>High</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Belgian_Strong_Ale</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule20" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Brown</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>Very high</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Belgian_Strong_Ale</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule21" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Brown</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>Label 5</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Belgian_Strong_Ale</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule22" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Brown</term>
+                </clause>
+                <clause>
+                    <variable>Strength</variable>
+                    <term>Label 6</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Belgian_Strong_Ale</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule23" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Black</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Stout</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule24" andMethod="min" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Color</variable>
+                    <term>Label 6</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>Beer_Style</variable>
+                        <term>Stout</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+    </mamdaniRuleBase>
+</fuzzySystem>

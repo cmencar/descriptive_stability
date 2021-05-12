@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<fuzzySystem xmlns="http://www.ieee1855.org" name="example">
+    <knowledgeBase>
+        <fuzzyVariable name="Number_of_times_pregnant" scale="" domainleft="0.0" domainright="17.0" type="input"/>
+        <fuzzyVariable name="Plasma_glucose_concentration" scale="" domainleft="0.0" domainright="199.0" type="input">
+            <fuzzyTerm name="MF0" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="127.0" param4="128.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF1" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="123.0" param4="124.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF2" complement="false">
+                <trapezoidShape param1="154.0" param2="155.0" param3="199.0" param4="199.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF3" complement="false">
+                <trapezoidShape param1="127.0" param2="128.0" param3="199.0" param4="199.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF4" complement="false">
+                <trapezoidShape param1="106.0" param2="108.0" param3="199.0" param4="199.0"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Diastolic_blood_pressure" scale="" domainleft="0.0" domainright="122.0" type="input">
+            <fuzzyTerm name="MF0" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="84.0" param4="85.0"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Triceps_skin_fold_thickness" scale="" domainleft="0.0" domainright="99.0" type="input"/>
+        <fuzzyVariable name="2_Hour_serum_insulin" scale="" domainleft="0.0" domainright="846.0" type="input"/>
+        <fuzzyVariable name="Body_mass_index" scale="" domainleft="0.0" domainright="67.1" type="input">
+            <fuzzyTerm name="MF0" complement="false">
+                <trapezoidShape param1="0.0" param2="0.0" param3="29.8" param4="29.9"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF1" complement="false">
+                <trapezoidShape param1="29.9" param2="30.0" param3="67.1" param4="67.1"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF2" complement="false">
+                <trapezoidShape param1="27.8" param2="27.9" param3="67.1" param4="67.1"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="Diabetes_pedigree_function" scale="" domainleft="0.078" domainright="2.42" type="input"/>
+        <fuzzyVariable name="Age" scale="" domainleft="21.0" domainright="81.0" type="input">
+            <fuzzyTerm name="MF0" complement="false">
+                <trapezoidShape param1="21.0" param2="21.0" param3="28.0" param4="29.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="MF1" complement="false">
+                <trapezoidShape param1="30.0" param2="31.0" param3="81.0" param4="81.0"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+        <fuzzyVariable name="class" scale="" domainleft="1.0" domainright="2.0" type="output" accumulation="MAX" defuzzifier="MOM" defaultValue="1.0">
+            <fuzzyTerm name="tested_negative" complement="false">
+                <trapezoidShape param1="1.0" param2="1.0" param3="1.0" param4="2.0"/>
+            </fuzzyTerm>
+            <fuzzyTerm name="tested_positive" complement="false">
+                <trapezoidShape param1="1.0" param2="2.0" param3="2.0" param4="2.0"/>
+            </fuzzyTerm>
+        </fuzzyVariable>
+    </knowledgeBase>
+    <mamdaniRuleBase name="rulebase-example" activationMethod="MIN" andMethod="MIN" orMethod="MAX">
+        <rule name="rule1" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma_glucose_concentration</variable>
+                    <term>MF0</term>
+                </clause>
+                <clause>
+                    <variable>Age</variable>
+                    <term>MF0</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>class</variable>
+                        <term>tested_negative</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule2" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma_glucose_concentration</variable>
+                    <term>MF1</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>class</variable>
+                        <term>tested_negative</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule3" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Body_mass_index</variable>
+                    <term>MF0</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>class</variable>
+                        <term>tested_negative</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule4" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma_glucose_concentration</variable>
+                    <term>MF2</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>class</variable>
+                        <term>tested_positive</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule5" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Body_mass_index</variable>
+                    <term>MF1</term>
+                </clause>
+                <clause>
+                    <variable>Plasma_glucose_concentration</variable>
+                    <term>MF3</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>class</variable>
+                        <term>tested_positive</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+        <rule name="rule6" andMethod="MIN" connector="and" weight="1.0">
+            <antecedent>
+                <clause>
+                    <variable>Plasma_glucose_concentration</variable>
+                    <term>MF4</term>
+                </clause>
+                <clause>
+                    <variable>Body_mass_index</variable>
+                    <term>MF2</term>
+                </clause>
+                <clause>
+                    <variable>Diastolic_blood_pressure</variable>
+                    <term>MF0</term>
+                </clause>
+                <clause>
+                    <variable>Age</variable>
+                    <term>MF1</term>
+                </clause>
+            </antecedent>
+            <consequent>
+                <then>
+                    <clause>
+                        <variable>class</variable>
+                        <term>tested_positive</term>
+                    </clause>
+                </then>
+            </consequent>
+        </rule>
+    </mamdaniRuleBase>
+</fuzzySystem>
